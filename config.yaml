@@ -3,7 +3,7 @@
 # TronGrid API配置
 trongrid:
   base_url: "https://api.trongrid.io"
-  api_key: "849cc081-79af-4d12-9db1-48ec1c16417e"  # 可选，如果需要更高的API限制
+  api_key: "##############"  # 可选，如果需要更高的API限制
   timeout: "60s"  # 增加超时时间
   retry_max: 5    # 增加重试次数
   retry_delay: "2s"  # 增加重试延迟
