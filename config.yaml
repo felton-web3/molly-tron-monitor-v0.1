@@ -1,0 +1,58 @@
+# Tron区块链监控系统配置文件
+
+# TronGrid API配置
+trongrid:
+  base_url: "https://api.trongrid.io"
+  api_key: "849cc081-79af-4d12-9db1-48ec1c16417e"  # 可选，如果需要更高的API限制
+  timeout: "60s"  # 增加超时时间
+  retry_max: 5    # 增加重试次数
+  retry_delay: "2s"  # 增加重试延迟
+
+# Redis配置
+redis:
+  addr: "localhost:6379"
+  password: ""
+  db: 0
+  pool_size: 10
+
+# 监控配置
+monitor:
+  block_interval: "1s"  # 区块查询间隔，每秒一次
+  worker_count: 4       # 工作线程数
+  queue_size: 1000      # 队列大小
+  batch_size: 10        # 批处理大小
+  max_block_height: 0   # 最大区块高度，0表示不限制
+  start_block_height: 0 # 起始区块高度，0表示从最新区块开始
+
+# 监控地址列表
+watch_addresses:
+  # 高频交易地址
+  - "TFf4adaFeiSqeVhx8DPPpjEdZdibedH2vK"  # 活跃交易地址1
+  - "TT81vnBEvxeRAfkHXh3ah9L4HFw8t5C7wn"  # 活跃交易地址2
+  - "TVMUCSy1QCuzUxjNfzPe28wF75aL8Ypuhf"  # 活跃交易地址3
+  - "TYPjL2iwqvcev7jDBe4M85Jq2FYpvkMvAH"  # 活跃交易地址4
+  - "TWQ2gs4u8a51SBy9SAoYNizdQKvbMpawEg"  # 活跃交易地址5
+  - "TZ7sZbeGVr8GJSqQnJsD4MMa1sSF829Swn"  # 活跃交易地址6
+  # 添加一些已知的USDT活跃交易地址
+  - "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"  # USDT合约地址
+  - "TQn9Y2khDD95J42FQtQTdwVVRKqKqQK9Kq"  # 已知USDT活跃地址
+  - "TJRabPrwbZy45sbavfcjinPJC18kjpRTv8"  # 已知USDT活跃地址
+
+# USDT监控配置
+usdt:
+  contract_address: "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"  # USDT合约地址
+  enable_monitoring: true  # 启用USDT监控
+  min_amount: 1  # 最小监控金额（USDT）
+  max_amount: 1000000  # 最大监控金额（USDT）
+  decimals: 6  # USDT精度
+
+
+# 日志配置
+log:
+  level: "info"  # debug, info, warn, error
+  file: ""       # 日志文件路径，空表示输出到控制台
+
+# HTTP服务配置
+server:
+  host: "0.0.0.0"
+  port: "8080"

@@ -1,0 +1,59 @@
+# 二进制文件
+build/
+tron-monitor
+tron-monitor-*
+
+# 测试覆盖率文件
+coverage.out
+coverage.html
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Go相关
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# 依赖目录
+vendor/
+
+# 环境变量文件
+.env
+.env.local
+.env.production
+
+# 配置文件（可选，如果包含敏感信息）
+# config.yaml
+
+# Docker相关
+.dockerignore
+
+# 备份文件
+*.bak
+*.backup
